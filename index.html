@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +8,39 @@
     <link rel="stylesheet" href="style.css">
     <title>Music Player</title>
 </head>
+
 <body>
     <main>
         <audio id="player"></audio>
         <section>
-            <h3 class="musicName">Nome da Musica</h3>
+            <h3 class="musicName">Nome da Música</h3>
             <p class="bandName">Banda</p>
             <div class="volume">
                 <i class="ph ph-speaker-none"></i>
-                <input
-                    type="range"
-                    min="1"
-                    max="100"
-                    value="99"
-                    class="volumeSlider"/>
-                <i class="ph-speaker-high"></i>
+                <input type="range" min="1" max="100" value="99" class="volumeSlider" />
+                <i class="ph ph-speaker-simple-high"></i>
+
             </div>
 
             <div class="player">
                 <button class="prev"><i class="ph ph-rewind"></i></button>
                 <button class="play"><i class="ph ph-play"></i></button>
                 <button class="next"><i class="ph ph-fast-forward"></i></button>
-                <button class="randon"><i class="ph ph-shuffle"></i></button> 
+                <button class="randon"><i class="ph ph-shuffle"></i></button>
             </div>
 
-            <div>
-                <div class="progressBar">
-                    <div class="progress"></div>
-                </div>
+            <div class="progressContainer">
                 <div class="musicTimer">
                     <span class="currentTime">00:00</span>
                     <span class="duration">00:00</span>
                 </div>
+                <div class="progressBar">
+                    <div class="progress"></div>
+                </div>
             </div>
         </section>
     </main>
-    
+    <script src="./script.js" type="module"></script>
 </body>
+
 </html>
