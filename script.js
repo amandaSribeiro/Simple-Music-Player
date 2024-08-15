@@ -22,6 +22,8 @@ nameMusic.textContent = songs[index].name;
 bandName.textContent = songs[index].band;
 
 playPause.onclick = () => playPauseMusic();
+next.onclick = () => nextMusic(); // Evento para avançar para a próxima música
+prev.onclick = () => prevMusic(); // Evento para voltar para a música anterior
 
 function playPauseMusic() {
     if (player.paused) {
@@ -31,6 +33,24 @@ function playPauseMusic() {
         player.pause();
         playPause.innerHTML = textButtomPlay;
     }
+}
+
+function nextMusic() {
+    index = (index + 1) % songs.length; // Avança para a próxima música e retorna ao início se estiver na última
+    player.src = songs[index].src; // Atualiza a fonte do áudio
+    nameMusic.textContent = songs[index].name; // Atualiza o nome da música
+    bandName.textContent = songs[index].band; // Atualiza o nome da banda
+    player.play(); // Reproduz a nova música
+    playPause.innerHTML = textButtomPause; // Atualiza o ícone do botão play/pause para "pause"
+}
+
+function prevMusic() {
+    index = (index - 1 + songs.length) % songs.length; // Volta para a música anterior, ou vai para a última música se estiver na primeira
+    player.src = songs[index].src; // Atualiza a fonte do áudio
+    nameMusic.textContent = songs[index].name; // Atualiza o nome da música
+    bandName.textContent = songs[index].band; // Atualiza o nome da banda
+    player.play(); // Reproduz a música anterior
+    playPause.innerHTML = textButtomPause; // Atualiza o ícone do botão play/pause para "pause"
 }
 
 // Controle de volume
