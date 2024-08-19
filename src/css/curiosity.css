@@ -1,5 +1,14 @@
-body{
+body {
     background-color: #4a148c;
+    padding-top: 60px; /* Adiciona espaço para o menu fixo */
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
 }
 
 .main {
@@ -20,16 +29,13 @@ body{
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
 .music-info {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-}
-
-.artist-info{
-    background-color: black;
 }
 
 .music-info img {
